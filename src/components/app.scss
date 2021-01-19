@@ -1,0 +1,10 @@
+@import '../styles/colors.scss';
+
+html, body, #root {
+    height: 100%;
+}
+
+.default-background {
+    background: $light-gray;
+    min-height: 100%;
+}

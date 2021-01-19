@@ -1,0 +1,41 @@
+@import '../../styles/colors.scss';
+
+.search-bar {
+    background: $base-color;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    .logo {
+        width: 44px;
+        height: 32px;
+        background-image: url(../../assets/img/logo-mercado-libre.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .input-search {
+        width: calc(100% - 38px);
+        border-radius: 4px 0 0 4px;
+        padding: 6px 12px;
+        font-size: 18px;
+    }
+    .input-search:hover, .input-search:focus, .button-search:hover, .button-search:focus {
+        outline: none;
+        border-color: lightblue;
+    }
+    .button-search {
+        width: 38px;
+        height: 41px;
+        background-color: $light-gray;
+        border-radius: 0 4px 4px 0;
+    }
+    .input-search, .button-search {
+        vertical-align: top;
+        display: inline-block;
+        border: 1px solid $light-gray;
+    }
+    .search-icon {
+        width: 20px;
+        margin: 0 auto;
+    }
+    
+}

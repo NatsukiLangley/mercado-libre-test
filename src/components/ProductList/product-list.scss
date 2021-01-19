@@ -1,0 +1,51 @@
+@import '../../styles/colors.scss';
+
+.bread-crumbs {
+    padding: 16px 0;
+    .bread-text {
+        font-size: 14px;
+    }
+}
+
+.product-card {
+    padding: 16px;
+    background-color: #ffffff;
+    .image-reference {
+        width: 180px;
+        height: 180px;
+        display: inline-block;
+        border-radius: 4px;
+        margin-right: 16px;
+    }
+    .product-description{
+        width: calc(100% - 332px);
+        display: inline-block;
+        .product-price {
+            margin-bottom: 32px;
+        }
+        .product-name {
+            font-size: 18px;
+        }
+    }
+    .product-city {
+        width: 100px;
+        display: inline-block;
+        .font-city{
+            font-size: 12px;
+        }
+    }
+}
+
+.gray-hr {
+    padding: 0 16px;
+    background: #ffffff;
+    .line-gray{
+        height: 1px;
+        background: $light-gray;
+    }
+}
+
+.full-width {
+    width: 100%;
+}
+
