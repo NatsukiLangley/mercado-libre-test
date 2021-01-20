@@ -6,11 +6,23 @@ import './product-detail.scss';
 
 const ProductDetail = () => {
     const { id } = useParams();
-    const [product] = useProduct(id);
+    const [product, category] = useProduct(id);
+    let renderCategory = [];
+
+    if(category.length > 0) {
+        renderCategory = category.map((filter) => {
+            return (
+                <span key={filter.id}> 
+                    {filter.name}
+                    <span> &gt; </span> 
+                </span>
+            );
+        });
+    }
 
     const renderProduct = product.map((product) => {
         return (
-            <div key={product.item.id}>
+            <div className="pad-32" key={product.item.id}>
                 <div className="row" >
                     <div className="col-12 col-md-7">
                         <img className="image-product full-width" src={product.item.picture} alt={product.item.title} />
@@ -20,7 +32,7 @@ const ProductDetail = () => {
                         <p className="product-name">{product.item.title}</p>
                         <p className="product-price">$ {product.item.price.amount}</p>
                         <div className="col-12 col-sm-10 p-0">
-                            <button type="button" className="btn btn-primary full-width">Comprar</button>
+                            <button type="button" className="btn btn-primary full-width buy-button">Comprar</button>
                         </div>
                     </div>
                 </div>
@@ -39,7 +51,7 @@ const ProductDetail = () => {
     return (
         <div className="container">
             <div className="bread-crumbs">
-                <p className="bread-text">Ejemplo</p>
+                <p className="bread-text">{renderCategory}</p>
             </div>
             <div className="white-background">
                 {renderProduct}

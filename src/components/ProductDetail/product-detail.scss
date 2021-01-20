@@ -34,9 +34,18 @@
 }
 
 .description-product {
-    padding: 32px;
+    padding-top: 32px;
     .description-title {
         font-size: 28px;
     }
+}
+
+.pad-32 {
+    padding: 32px;
+}
+
+.buy-button {
+    background-color: $light-blu !important;
+    border-color: $light-blu !important;
 }
 

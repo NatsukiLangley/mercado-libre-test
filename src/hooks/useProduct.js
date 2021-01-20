@@ -3,6 +3,7 @@ import mercadolibre from '../apis/mercado-libre';
 
 const useProduct = (defaultSearch) => {
     const [product, setProduct] = useState([]);
+    const [category, setCategory] = useState([]);
 
     useEffect(() => {
         searchProduct(defaultSearch)
@@ -11,6 +12,7 @@ const useProduct = (defaultSearch) => {
     const searchProduct = async (product) => {
         const generalProductData = await mercadolibre.get(`/items/${product}`);
         const descriptionProduct = await mercadolibre.get(`/items/${product}/description`);
+       
         const filter = [
             {
                 author: {
@@ -33,11 +35,12 @@ const useProduct = (defaultSearch) => {
                 }
             }
         ];
-
+        const categoryList =  await mercadolibre.get(`/categories/${generalProductData.data.category_id}`);
+        setCategory(categoryList.data.path_from_root)
         setProduct(filter);
     }
 
-    return [product]
+    return [product, category]
 };
 
 export default useProduct;

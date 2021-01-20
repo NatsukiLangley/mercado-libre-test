@@ -21,14 +21,15 @@ const App = () => {
             <div className="default-background">
                 <SearchBar onFormSubmit={search} />
                 <Switch>
-                    <Route path="/items/:id">
-                        <ProductDetail />
-                    </Route>
-                    <Route path="/search/:id">
+                    <Route path="/items/search/:id">
                         <ProductsList
                             products={products}
                         />
                     </Route>
+                    <Route path="/items/:id">
+                        <ProductDetail />
+                    </Route>
+
                 </Switch>
             </div>
         </BrowserRouter>

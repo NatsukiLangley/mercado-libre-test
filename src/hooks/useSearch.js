@@ -4,6 +4,7 @@ import mercadolibre from '../apis/mercado-libre';
 
 const useSearch = (defaultSearch) => {
     const [products, setProducts] = useState([]);
+    const [filters, setFilters] = useState([]);
 
     useEffect(() => {
         search(defaultSearch);
@@ -17,10 +18,13 @@ const useSearch = (defaultSearch) => {
             }
         });
 
+        const listOfFilter = response.data.filters;
+
         setProducts(response.data.results);
+        setFilters(listOfFilter);
     };
 
-    return [products];
+    return [products, filters];
 };
 
 export default useSearch;

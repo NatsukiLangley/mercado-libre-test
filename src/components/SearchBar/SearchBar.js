@@ -9,19 +9,19 @@ const SearchBar = (props, { onFormSubmit }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.history.push(`/search/${term}`);
-      }
+        props.history.push(`/items/search/${term}`);
+    }
 
     return (
         <div className="search-bar">
             <div className="container">
                 <div className="row">
-                    <Link to="/">
-                    <div className="col-1">
-                        <div className="logo"></div>
+                    <div className="col-2 col-sm-1">
+                        <Link to="/">
+                            <div className="logo"></div>
+                        </Link>
                     </div>
-                    </Link>
-                    <div className="col-11">
+                    <div className="col-10 col-sm-11">
                         <form onSubmit={handleSubmit}>
                             <input
                                 placeholder="Nunca dejes de buscar"

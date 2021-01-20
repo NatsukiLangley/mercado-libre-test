@@ -7,7 +7,19 @@ import './product-list.scss';
 
 const ProductsList = () => {
     const { id } = useParams();
-    const [products] = useSearch(id);
+    const [products, filters] = useSearch(id);
+    let renderFilter = [];
+
+    if(filters.length > 0) {
+        renderFilter = filters[0].values[0].path_from_root.map((filter) => {
+            return (
+                <span key={filter.id}> 
+                    {filter.name}
+                    <span> &gt; </span> 
+                </span>
+            );
+        });
+    }
 
     const renderedList = products.map((product) => {
         return (
@@ -36,7 +48,7 @@ const ProductsList = () => {
     return (
         <div className="container">
             <div className="bread-crumbs">
-                <p className="bread-text">Ejemplo</p>
+                <p className="bread-text">{renderFilter}</p>
             </div>
             <div className="product-wrapper">
                 {renderedList}
