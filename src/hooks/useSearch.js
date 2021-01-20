@@ -10,7 +10,6 @@ const useSearch = (defaultSearch) => {
     }, [defaultSearch]);
 
     const search = async (product) => {
-
         const response = await mercadolibre.get('/sites/MLA/search', {
             params: {
                 q: product,
