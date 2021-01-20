@@ -1,0 +1,42 @@
+@import '../../styles/colors.scss';
+
+.bread-crumbs {
+    padding: 16px 0;
+    .bread-text {
+        font-size: 14px;
+    }
+}
+
+.product-status {
+    font-size: 14px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+.product-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 32px;
+    padding-left: 0;
+}
+
+.image-product{
+    max-width: 680px;
+    display: inline-block;
+}
+
+.white-background {
+    background-color: white;
+}
+
+.product-price {
+    font-size: 46px;
+    margin-bottom: 32px;
+}
+
+.description-product {
+    padding: 32px;
+    .description-title {
+        font-size: 28px;
+    }
+}
+

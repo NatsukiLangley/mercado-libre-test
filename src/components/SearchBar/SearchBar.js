@@ -9,6 +9,7 @@ const SearchBar = ({ onFormSubmit }) => {
     const onSubmit = (event) => {
         event.preventDefault();
         onFormSubmit(term);
+        this.props.history.push('/search');
       };
 
     return (

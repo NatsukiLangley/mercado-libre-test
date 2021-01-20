@@ -1,8 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'https://api.mercadolibre.com',
-    params: {
-        maxResults: 4,
-    }
+    baseURL: 'https://api.mercadolibre.com'
 });
