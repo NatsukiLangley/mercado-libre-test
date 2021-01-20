@@ -29,11 +29,10 @@ const App = () => {
                             products={products}
                         />
                     </Route>
-
                 </Switch>
             </div>
         </BrowserRouter>
-    );
-};
+    )
+}
 
 export default App;

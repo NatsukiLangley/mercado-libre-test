@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
 import './search-bar.scss';
 import lupa from '../../assets/img/lupa.png'
-import { Redirect, Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
-const SearchBar = ({ onFormSubmit }) => {
+const SearchBar = (props, { onFormSubmit }) => {
     const [term, setTerm] = useState('');
-    const [submited, setSubmit] = useState(false);
 
-    const onSubmit = (event) => {
-        event.preventDefault();
-        onFormSubmit(term);
-        setSubmit(true);
-    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        props.history.push(`/search/${term}`);
+      }
 
     return (
         <div className="search-bar">
-            {
-                submited ? <Redirect to={`/search/${term}`} /> : null
-            }
             <div className="container">
                 <div className="row">
                     <Link to="/">
@@ -27,7 +22,7 @@ const SearchBar = ({ onFormSubmit }) => {
                     </div>
                     </Link>
                     <div className="col-11">
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={handleSubmit}>
                             <input
                                 placeholder="Nunca dejes de buscar"
                                 type="text"
@@ -35,7 +30,7 @@ const SearchBar = ({ onFormSubmit }) => {
                                 value={term}
                                 onChange={(event) => setTerm(event.target.value)}
                             />
-                            <button className="button-search" onClick={onSubmit}>
+                            <button className="button-search">
                                 <img src={lupa} alt="lupa" className="search-icon" />
                             </button>
                         </form>
@@ -47,4 +42,4 @@ const SearchBar = ({ onFormSubmit }) => {
 
 };
 
-export default SearchBar;
+export default withRouter(SearchBar);

@@ -6,7 +6,7 @@ import './product-detail.scss';
 
 const ProductDetail = () => {
     const { id } = useParams();
-    const [product, search] = useProduct(id);
+    const [product] = useProduct(id);
 
     const renderProduct = product.map((product) => {
         return (
@@ -20,7 +20,7 @@ const ProductDetail = () => {
                         <p className="product-name">{product.item.title}</p>
                         <p className="product-price">$ {product.item.price.amount}</p>
                         <div className="col-12 col-sm-10 p-0">
-                            <button type="button" class="btn btn-primary full-width">Comprar</button>
+                            <button type="button" className="btn btn-primary full-width">Comprar</button>
                         </div>
                     </div>
                 </div>

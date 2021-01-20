@@ -37,7 +37,7 @@ const useProduct = (defaultSearch) => {
         setProduct(filter);
     }
 
-    return [product, searchProduct]
+    return [product]
 };
 
 export default useProduct;

@@ -20,7 +20,7 @@ const useSearch = (defaultSearch) => {
         setProducts(response.data.results);
     };
 
-    return [products, search];
+    return [products];
 };
 
 export default useSearch;

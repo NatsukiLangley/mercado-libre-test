@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useSearch from '../../hooks/useSearch';
+import { useParams } from 'react-router-dom';
 
 import './product-list.scss';
 
-const ProductsList = ({ products }) => {
+const ProductsList = () => {
+    const { id } = useParams();
+    const [products] = useSearch(id);
+
     const renderedList = products.map((product) => {
         return (
             <div key={product.id}>
